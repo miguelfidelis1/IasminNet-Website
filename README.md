@@ -1,14 +1,15 @@
+# README - IasminNet
 
-🌸 Sobre o Projeto
+## 🌸 Sobre o Projeto
 **IasminNet** é uma plataforma pessoal de streaming criada especialmente para a Iasmin assistir suas séries favoritas. Um presente digital com design elegante e funcionalidades personalizadas.
 
-✨ Recursos Principais
+## ✨ Recursos Principais
 - **Catálogo Organizado**: Séries categorizadas por gênero e preferências
 - **Player Integrado**: Assistir episódios diretamente no site
 - **Design Personalizado**: Temas roxos e elementos românticos
 - **Responsivo**: Acessível em todos os dispositivos
 
-🎨 Guia de Estilo
+## 🎨 Guia de Estilo
 ### Paleta de Cores
 ```css
 :root {
