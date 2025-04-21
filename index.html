@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vinda ao IasminNet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5e6ff, #d9b3ff);
+            color: #4a148c;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #6a1b9a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #e91e63;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.2);
+                opacity: 0;
+            }
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #9c27b0;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+        }
+        
+        .btn:hover {
+            background: #7b1fa2;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
+        }
+        
+        .signature {
+            margin-top: 50px;
+            font-style: italic;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <h1>Bem-vinda ao IasminNet, amor! ❤️</h1>
+        
+        <p>Esse site foi feito especialmente para você assistir suas séries favoritas com todo conforto.</p>
+        
+        <p>Por enquanto tem poucos títulos, mas vou adicionando mais com o tempo, prometo!</p>
+        
+        <p>Espero que goste desse presentinho digital. Cada detalhe foi pensado em você.</p>
+        
+        <a href="/home/index.html" class="btn">Ver Catálogo de Séries</a>
+        
+        <div class="signature">
+            <p>Com todo meu amor,</p>
+            <p><i class="fas fa-heart" style="color: #e91e63;"></i> [Seu Nome]</p>
+        </div>
+    </div>
+
+    <script>
+        // Criação dos corações flutuantes
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const colors = ['#e91e63', '#ff4081', '#f50057', '#ff80ab'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = 4 + Math.random() * 6 + 's';
+                heart.style.fontSize = 10 + Math.random() * 20 + 'px';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                heartsContainer.appendChild(heart);
+                
+                // Remove o coração após a animação terminar
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }, 300);
+        }
+        
+        // Inicia quando a página carrega
+        window.onload = createHearts;
+    </script>
+</body>
+</html>

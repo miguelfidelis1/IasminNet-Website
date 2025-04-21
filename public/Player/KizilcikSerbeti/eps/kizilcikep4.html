@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kizilcik Serbeti - Episódio 4 | IasminNet</title>
+    <link rel="stylesheet" href="/styles/ep.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-heart"></i> IasminNet</h1>
+            <p>Para você assistir suas séries favoritas</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home/index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#"><i class="fas fa-list"></i> Minha Lista</a></li>
+                <li><a href="#"><i class="fas fa-search"></i> Buscar</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-episodio">
+        <div class="player-container">
+            <div class="player-wrapper">
+                <!-- Player incorporado - SUBSTITUA APENAS O LINK DO SRC PARA CADA EPISÓDIO -->
+                <iframe src="https://filemoon.to/e/7u108wediefz/A_For_a_Do_Amor._Cap.04.mp4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>            </div>
+            <div class="player-controls">
+                <span><i class="fas fa-play"></i> Reproduzindo: Episódio 4</span>
+                <div>
+                    <button class="btn-control"><i class="fas fa-expand"></i> Tela Cheia</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="episodio-info">
+            <h2>Episódio 4: Parte 4</h2>
+            <div class="meta-info">
+                <span><i class="fas fa-calendar-alt"></i> Data de lançamento: 18 de nov. de 2022</span>
+                <span><i class="fas fa-clock"></i> Duração: 2 h</span>
+            </div>
+            <p class="sinopse">Problemas entre o caçula de Kivilcim, Cimen, e o filho de Omer, Metehan, aproximaram os pais. Como a surpresa do casamento irritou a família conservadora, Alev tentou se redimir pelo bem de Doga. O turbante falso de Ecem surpreendeu a todos.</p>
+            
+            <div class="episodio-navigation">
+                <a href="/public/Player/KizilcikSerbeti/eps/kizilcikep3.html"><button class="nav-button"><i class="fas fa-arrow-left"></i> Anterior</button></a>
+                <a href="/public/Player/KizilcikSerbeti/eps/kizilcikep5.html"><button class="nav-button"><i class="fas fa-arrow-right"></i>Próximo</button></a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre</h4>
+                <p>Site criado com amor para assistir séries juntos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 IasminNet</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para controle do player
+        document.addEventListener('DOMContentLoaded', function() {
+            // Botão de tela cheia
+            const fullscreenBtn = document.querySelector('.btn-control:nth-of-type(1)');
+            const playerWrapper = document.querySelector('.player-wrapper');
+            
+            fullscreenBtn.addEventListener('click', function() {
+                if (playerWrapper.requestFullscreen) {
+                    playerWrapper.requestFullscreen();
+                } else if (playerWrapper.webkitRequestFullscreen) {
+                    playerWrapper.webkitRequestFullscreen();
+                } else if (playerWrapper.msRequestFullscreen) {
+                    playerWrapper.msRequestFullscreen();
+                }
+            });
+            
+            // Atualizar o botão de tela cheia quando o estado muda
+            document.addEventListener('fullscreenchange', updateButton);
+            document.addEventListener('webkitfullscreenchange', updateButton);
+            document.addEventListener('msfullscreenchange', updateButton);
+            
+            function updateButton() {
+                if (document.fullscreenElement || 
+                    document.webkitFullscreenElement || 
+                    document.msFullscreenElement) {
+                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i> Sair da Tela Cheia';
+                } else {
+                    fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> Tela Cheia';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
